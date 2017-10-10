@@ -55,9 +55,41 @@
   flex-grow: 2;
 }
 
-.likes-people span {
+.likes-people span, .person-name {
   font-size: 16px;
   color: #417399;
   font-weight: bold;
   margin: 0 5px;
 }
+
+
+.comment-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  float: left;
+  overflow: hidden;
+}
+
+.item-1 {
+  border-bottom: 1px solid #ccc;
+}
+
+.person-photo {
+  height: 30px;
+  border-radius: 3px;
+  margin: 0 8px;
+}
+
+ .person-photo img {
+  height: 30px;
+  width: 30px;
+ }
+
+
