@@ -11,15 +11,15 @@
   font-family: sans-serif, serif;
   font-stretch: expanded;
   width: auto;
+  background: #FAFAFA;
+}
+
+.pic-container, .pic-container img {
+  height: 250px;
 }
 
 .pic-container {
   overflow: hidden;
-}
-
-.pic-container img {
-  height: 250px;
-  width: border-box;
 }
 
 .likes-container {
@@ -99,10 +99,13 @@
   height: 35px;
   display: flex;
   align-items: center;
+  background: #FFFFFF;
 }
 
 .comment-box input {
   margin-left: 8px;
+  width: 90%;
+  outline: none;
 }
 .comment-box input::placeholder {
   color: #CECECE;
