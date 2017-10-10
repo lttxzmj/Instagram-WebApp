@@ -1,0 +1,116 @@
+/* 重用样式 */
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container {
+  font-size: 14px;
+  font-family: sans-serif, serif;
+  font-stretch: expanded;
+  width: auto;
+  background: #FAFAFA;
+}
+
+.pic-container img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.pic-container {
+  overflow: hidden;
+}
+
+.likes-container {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  width: border-box;
+  display: flex;
+}
+
+.likes-icon, .likes-people, .more {
+  float: left;
+  height: 50px;
+}
+
+.likes-icon, .more {
+  width: 40px;
+  flex-grow: 1;
+}
+
+.likes-icon, .likes-people {
+  border-right: 1px solid #ccc;
+}
+
+.likes-icon i, .more i {
+  font-size: 30px;
+  color: #ccc;
+}
+
+.likes-people {
+  padding: 0 15px;
+  margin: 0;
+  font-size: 16px;
+  flex-grow: 2;
+}
+
+.likes-people span, .person-name {
+  font-size: 16px;
+  color: #417399;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+
+.comment-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  float: left;
+  overflow: hidden;
+}
+
+.item-1 {
+  border-bottom: 1px solid #ccc;
+}
+
+.person-photo {
+  height: 30px;
+  border-radius: 3px;
+  margin: 0 8px;
+}
+
+ .person-photo img {
+  height: 30px;
+  width: 30px;
+ }
+
+
+.comment-box {
+  margin: 0 8px;
+  border: 1px solid #EDEDED;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+}
+
+.comment-box input {
+  margin-left: 8px;
+  width: 90%;
+  outline: none;
+}
+.comment-box input::placeholder {
+  color: #CECECE;
+}
+
