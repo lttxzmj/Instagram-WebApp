@@ -93,3 +93,18 @@
  }
 
 
+.comment-box {
+  margin: 0 8px;
+  border: 1px solid #EDEDED;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.comment-box input {
+  margin-left: 8px;
+}
+.comment-box input::placeholder {
+  color: #CECECE;
+}
+
