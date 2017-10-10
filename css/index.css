@@ -14,8 +14,11 @@
   background: #FAFAFA;
 }
 
-.pic-container, .pic-container img {
-  height: 250px;
+.pic-container img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
 }
 
 .pic-container {
