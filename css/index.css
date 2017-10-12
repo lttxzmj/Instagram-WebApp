@@ -1,4 +1,4 @@
-html, body{
+html, body {
   height: 100%;
 }
 
@@ -15,29 +15,40 @@ html, body{
   width: 100%;
   height: 100%;
   background-color: #FAFAFA;
+  position: relative;
+  overflow: hidden;
 }
 
 .pic-container {
   overflow: hidden;
+  height: 30%
 }
 
 .pic-container img {
   width: 100%;
-  height: auto;
   max-width: 100%;
   display: block;
+}
+
+.comment-status {
+  height: 63%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.likes-container, .comment-item {
+  height: 50px;
 }
 
 .likes-container {
   overflow: hidden;
   border: 1px solid #ccc;
-  width: border-box;
   display: flex;
 }
 
 .likes-icon, .likes-people, .more {
   float: left;
-  height: 50px;
 }
 
 .likes-icon, .more {
@@ -68,26 +79,21 @@ html, body{
   margin: 0 5px;
 }
 
-.comment-container {
-  position: relative;
-}
-
 .comment-detail {
-  display: flex;
-  flex-direction: column;
+  overflow: scroll;
 }
 
 .comment-item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 50px;
+  width: 100%;
   float: left;
   overflow: hidden;
   border-bottom: 1px solid #ccc;
 }
 
-.person-photo,.comment-box, .comment-box input {
+.person-photo, .comment-box, .comment-box input {
   margin: 0 2%;
 }
 
@@ -96,25 +102,26 @@ html, body{
   border-radius: 3px;
 }
 
- .person-photo img {
+.person-photo img {
   height: 30px;
   width: 30px;
- }
+}
 
 .comment-box {
-  position: fixed;
+  position: absolute;
   bottom: 1%;
+  left: 0;
   border: 1px solid #EDEDED;
-  height: 35px;
-  display: flex;
   width: 96%;
-  align-items: center;
+  height: 5%;
   background: #FFFFFF;
 }
 
 .comment-box input {
   width: 95%;
   outline: none;
+  height: 30px;
+  ;
 }
 
 .comment-box input::placeholder {
