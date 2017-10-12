@@ -119,9 +119,11 @@ html, body {
 
 .comment-box input {
   width: 95%;
-  outline: none;
-  height: 30px;
-  ;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  height: 15px;
+  outline-style: none;
 }
 
 .comment-box input::placeholder {
