@@ -1,4 +1,6 @@
-/* 重用样式 */
+html, body {
+  height: 100%;
+}
 
 .center {
   display: flex;
@@ -10,31 +12,43 @@
   font-size: 14px;
   font-family: sans-serif, serif;
   font-stretch: expanded;
-  width: auto;
-  background: #FAFAFA;
-}
-
-.pic-container img {
   width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
+  height: 100%;
+  background-color: #FAFAFA;
+  position: relative;
+  overflow: hidden;
 }
 
 .pic-container {
   overflow: hidden;
+  height: 30%
+}
+
+.pic-container img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.comment-status {
+  height: 63%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.likes-container, .comment-item {
+  height: 50px;
 }
 
 .likes-container {
   overflow: hidden;
   border: 1px solid #ccc;
-  width: border-box;
   display: flex;
 }
 
 .likes-icon, .likes-people, .more {
   float: left;
-  height: 50px;
 }
 
 .likes-icon, .more {
@@ -65,52 +79,53 @@
   margin: 0 5px;
 }
 
-
 .comment-detail {
-  display: flex;
-  flex-direction: column;
+  overflow: scroll;
 }
 
 .comment-item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 50px;
+  width: 100%;
   float: left;
   overflow: hidden;
+  border-bottom: 1px solid #ccc;
 }
 
-.item-1 {
-  border-bottom: 1px solid #ccc;
+.person-photo, .comment-box, .comment-box input {
+  margin: 0 2%;
 }
 
 .person-photo {
   height: 30px;
   border-radius: 3px;
-  margin: 0 8px;
 }
 
- .person-photo img {
+.person-photo img {
   height: 30px;
   width: 30px;
- }
-
+}
 
 .comment-box {
-  margin: 0 8px;
+  position: absolute;
+  bottom: 1%;
+  left: 0;
   border: 1px solid #EDEDED;
-  height: 35px;
-  display: flex;
-  align-items: center;
+  width: 96%;
+  height: 5%;
   background: #FFFFFF;
 }
 
 .comment-box input {
-  margin-left: 8px;
-  width: 90%;
-  outline: none;
+  width: 95%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  height: 15px;
+  outline-style: none;
 }
+
 .comment-box input::placeholder {
   color: #CECECE;
 }
-
