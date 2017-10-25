@@ -1,0 +1,165 @@
+swagger: '2.0'
+info:
+  description: This is a web app of Instagram comments.
+  version: 1.0.0
+  title: Instagram Webapp
+  license:
+    name: MIT
+host: instagram.example.com
+basePath: /api
+tags:
+  - name: comment
+    description: The comments of users.
+  - name: like
+    description: The attitude of users about the comment.
+schemes:
+  - http
+paths:
+  /comment:
+    get:
+      tags:
+        - comment
+      summary: Lists all comments.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Comment'
+    post:
+      tags:
+        - comment
+      summary: Creates a new comment.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: The comment entity that needs to be created
+          required: true
+          schema:
+            $ref: '#/definitions/CommentRequest'
+      responses:
+        200:
+          description: OK
+  /comment/{commentId}:
+    get:
+      tags:
+        - comment
+      summary: Gets a specified comment.
+      produces:
+        - application/json
+      parameters:
+        - name: commentId
+          in: path
+          description: The ID of comment that needs to be shown
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Comment'
+    put:
+      tags:
+        - comment
+      summary: Updates a specified comment.
+      consumes:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: The comment entity that needs to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/CommentRequest'
+        - name: commentId
+          in: path
+          description: The ID of comment that needs to be updated
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+        404:
+          description: comment not found
+    delete:
+      tags:
+        - comment
+      summary: Deletes the specified comment.
+      parameters:
+        - name: commentId
+          in: path
+          description: The ID of comment that needs to be deleted
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+        404:
+          description: comment not found
+  /likes:
+    get:
+      tags:
+        - like
+      summary: Gets all likes people name who gived likes under the comment.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+  /likes/like:
+    post:
+      tags:
+        - like
+      summary: Post like about the comment.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+  /likes/dislike:
+    post:
+      tags:
+        - like
+      summary: Dislike about the comment.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      avatarUrl:
+        type: string
+  Comment:
+    type: object
+    properties:
+      id:
+        type: integer
+      createdBy:
+        $ref: '#/definitions/User'
+      createdAt:
+        type: string
+      content:
+        type: string
+  CommentRequest:
+      type: object
+      properties:
+         content:
+          type: string
