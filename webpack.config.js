@@ -12,12 +12,12 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                include: [path.resolve(__dirname, 'src')],
+                exclude: [path.resolve(__dirname, 'node_modules')],
                 use: [
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: ['react']
+                            presets: ['env','react']
                         }
                     }
                 ]
@@ -32,7 +32,7 @@ module.exports = {
                 use: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader?sourceMap']})
             }, {
                 test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)(\?.*$|$)/,
-                use: ['file-loader']
+                use: ['file-loader?name=img/[hash:8].[name].[ext]']
             }
         ]
     },
