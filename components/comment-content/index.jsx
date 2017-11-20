@@ -11,7 +11,7 @@ export default class CommentContent extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="comment-status">
         <Like />
         <CommentList />
         <CommentForm />
