@@ -9,7 +9,7 @@ export default class CommentList extends React.Component {
 
   render(){
     const data = this.props.data;
-    const listItem = data.map((item, index) => <ListItem item={item} key={index}/>)
+    const listItem = data.map((item) => <ListItem item={item} key={item.id}/>)
 
     return(
       <div className="comment-detail">
