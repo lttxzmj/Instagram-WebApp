@@ -51,6 +51,10 @@ html, body {
   display: flex;
 }
 
+.likes-icon .active {
+  color: red;
+}
+
 .likes-icon, .likes-people, .more {
   float: left;
 }
