@@ -14,12 +14,12 @@ export default class CommentContent extends React.Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:8000/api/comment', {
+    fetch('http://localhost:8080/api/comment', {
       method: 'get'
     }).then((response) => {
+      return
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' + response.status);
-        return;
       }
       response.json().then((data) => {
           this.setState({
@@ -30,7 +30,7 @@ export default class CommentContent extends React.Component {
       console.log(err);
     });
 
-    fetch('http://localhost:8000/api/likes', {
+    fetch('http://localhost:8080/api/likes', {
       method: 'get'
     }).then((response) => {
       if (response.status !== 200) {
@@ -38,11 +38,10 @@ export default class CommentContent extends React.Component {
         return;
       }
       response.json().then((like) => {
-        console.log(like);
-          this.setState({
-            like: like
-          });
+        return this.setState({
+          like: like
         });
+      });
     }).catch(function(err){
       console.log(err);
     });
