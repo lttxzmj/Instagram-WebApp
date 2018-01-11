@@ -52,50 +52,30 @@ export default class Like extends React.Component {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
-      }).then((res) => {console.log(res)})
+      }).then((res) => {
+        return console.log(res);
+      })
+      .then(() => {
+        return fetch('http://localhost:8080/api/likes', {
+          method: 'get'
+        }).then((response) => {
+          if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' + response.status);
+            return;
+          }
+          response.json().then((like) => {
+            // this.setState((preState) => {
+            //   num: preState.num + 1
+            // })
+              console.log(like)
+            });
+        }).catch(function(err){
+          console.log(err);
+        })
+      })
     }
     handlePost(e);
-
-    // function GetDataFromPost(){
-    //   fetch('http://localhost:8000/api/likes', {
-    //     method: 'get'
-    //   }).then((response) => {
-    //     if (response.status !== 200) {
-    //       console.log('Looks like there was a problem. Status Code: ' + response.status);
-    //       return;
-    //     }
-    //     response.json().then((like) => {
-    //       this.setState((preState) => {
-    //         num: preState.num + 1
-    //       })
-    //         console.log(like)
-    //       });
-    //   }).catch(function(err){
-    //     console.log(err);
-    //   });
-    // }
-    // GetDataFromPost();
   }
-
-  // componentDidMount(){
-  //   fetch('http://localhost:8000/api/likes', {
-  //     method: 'get'
-  //   }).then((response) => {
-  //     if (response.status !== 200) {
-  //       console.log('Looks like there was a problem. Status Code: ' + response.status);
-  //       return;
-  //     }
-  //     response.json().then((like) => {
-  //       this.setState((preState) => {
-  //         num: preState.num + 1
-  //       })
-  //         console.log(like)
-  //       });
-  //   }).catch(function(err){
-  //     console.log(err);
-  //   });
-  // }
-
 
   render(){
     return(
