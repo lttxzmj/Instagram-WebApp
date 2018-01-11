@@ -124,6 +124,13 @@ paths:
       summary: Post like about the comment.
       produces:
         - application/json
+      parameters:
+        - name: PictureInfo
+          in: body
+          description: the info of the picture
+          required: true
+          schema:
+            $ref: '#/definitions/PictureInfo'
       responses:
         200:
           description: OK
@@ -134,10 +141,34 @@ paths:
       summary: Dislike about the comment.
       produces:
         - application/json
+      parameters:
+        parameters:
+        - name: PictureInfo
+          in: body
+          description: the info of the picture
+          required: true
+          schema:
+            $ref: '#/definitions/PictureInfo'
       responses:
         200:
           description: OK
 definitions:
+  PictureInfo:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      Url:
+        type: string
+        format: uri
+      likeStatus:
+        type: boolean
+      createdBy:
+        $ref: '#/definitions/User'
+      commentsInfo:
+        $ref: '#/definitions/Comment'
   User:
     type: object
     properties:
